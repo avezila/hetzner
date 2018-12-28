@@ -1,0 +1,17 @@
+{
+  "name": "hetzner",
+  "version": "1.0.0",
+  "main": "hetzner.js",
+  "scripts": {
+    "start": "node ./hetzner.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "node-utf-format": "^0.3.3",
+    "sync-request": "^6.0.0",
+    "telegraf": "^3.24.1",
+    "telegram-mtproto": "^1.0.5"
+  }
+}
