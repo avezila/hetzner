@@ -14,7 +14,7 @@ func WriteServersToFileGob(file string, servers []Server) (err error) {
 			_ = os.Rename("./data/"+file+".gob.br.tmp", "./data/"+file+".gob.br")
 		}
 	}()
-	gobBrFile, err := os.OpenFile("./data/"+file+".gob.br.tmp", os.O_CREATE|os.O_WRONLY, 0644)
+	gobBrFile, err := os.OpenFile("./data/"+file+".gob.br.tmp", os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
 	if err != nil {
 		return err
 	}

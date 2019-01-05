@@ -87,5 +87,9 @@ func ReceiveNewServers(newServers []Server) error {
 	servers = append(servers, newServers...)
 	servers = ServersDedup(servers)
 	log.Println("dedup servers", len(servers))
+
+	if err := GenerateHtml(servers, newServers); err != nil {
+		log.Println("Failed generate html", err)
+	}
 	return WriteServersToFileGob("servers", servers)
 }

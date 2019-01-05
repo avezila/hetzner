@@ -107,5 +107,9 @@ func (s Server) HashCode() (string, error) {
 	s.PriceVEur = 0
 	s.SetupPrice = ""
 	s.SetupPriceEur = 0
+	s.Datacenter = nil
+	s.RAMHr = ""
+	s.Description = nil
+	s.Freetext = ""
 	return HashCode(s)
 }

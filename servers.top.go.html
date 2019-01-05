@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container" style="max-width: 100%;">
+<p>
+  <a href="./index.html">серверы за все время</a>
+</p>
+<p>
+  <a href="./now.html">серверы сейчас</a>
+</p>
+
+<h2>Aggregated</h2>
+<table class="table table-bordered table-hover table-sm">
+  <tbody>
+    <col width="15%">
+    <col width="85%">
+    <tr>
+        <td>MinPrice</td>
+        <td>{{.Aggregated.MinPrice}}</td>
+    </tr>
+    <tr>
+        <td>MinCPUBenchmark</td>
+        <td>{{.Aggregated.MinCPUBenchmark}}</td>
+    </tr>
+    <tr>
+        <td>MinHddSize</td>
+        <td>{{.Aggregated.MinHddSize}}</td>
+    </tr>
+    <tr>
+        <td>MinSsdSize</td>
+        <td>{{.Aggregated.MinSsdSize}}</td>
+    </tr>
+    <tr>
+        <td>MinRAM</td>
+        <td>{{.Aggregated.MinRAM}}</td>
+    </tr>
+    <tr>
+        <td>MaxPrice</td>
+        <td>{{.Aggregated.MaxPrice}}</td>
+    </tr>
+    <tr>
+        <td>MaxCPUBenchmark</td>
+        <td>{{.Aggregated.MaxCPUBenchmark}}</td>
+    </tr>
+    <tr>
+        <td>MaxHddSize</td>
+        <td>{{.Aggregated.MaxHddSize}}</td>
+    </tr>
+    <tr>
+        <td>MaxSsdSize</td>
+        <td>{{.Aggregated.MaxSsdSize}}</td>
+    </tr>
+    <tr>
+        <td>MaxRAM</td>
+        <td>{{.Aggregated.MaxRAM}}</td>
+    </tr>
+    <tr>
+        <td>MinHddGbPerEur</td>
+        <td>{{.Aggregated.MinHddGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MinSsdGbPerEur</td>
+        <td>{{.Aggregated.MinSsdGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MinRAMGbPerEur</td>
+        <td>{{.Aggregated.MinRAMGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MinCPUBenchPerEur</td>
+        <td>{{.Aggregated.MinCPUBenchPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MaxHddGbPerEur</td>
+        <td>{{.Aggregated.MaxHddGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MaxSsdGbPerEur</td>
+        <td>{{.Aggregated.MaxSsdGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MaxRAMGbPerEur</td>
+        <td>{{.Aggregated.MaxRAMGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>MaxCPUBenchPerEur</td>
+        <td>{{.Aggregated.MaxCPUBenchPerEur}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>TopCPU</h2>
+<table class="table table-bordered table-hover table-sm">
+  <thead>
+    <th>Hash</th>
+    <th>hdd</th>
+    <th>ssd</th>
+    <th>ram</th>
+    <th>cpu</th>
+    <th>Avg</th>
+    <th>OnlySSD</th>
+    <th>OnlyHDD</th>
+    <th>CPU</th>
+    <th>bench</th>
+    <th>HddSize</th>
+    <th>x</th>
+    <th>IsEcc</th>
+    <th>IsHighio</th>
+    <th>RAM</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    {{range .TopCPU}}
+    <tr>
+        <td><a href="./{{.Hash}}.html">{{.Hash}}</a></td>
+        <td>{{.HddGbPerEurAdj}}</td>
+        <td>{{.SsdGbPerEurAdj}}</td>
+        <td>{{.RAMGbPerEurAdj}}</td>
+        <td>{{.CPUBenchPerEurAdj}}</td>
+        <td>{{.Average}}</td>
+        <td>{{.OnlySSD}}</td>
+        <td>{{.OnlyHDD}}</td>
+        <td>{{.CPU}}</td>
+        <td>{{.CPUBenchmark}}</td>
+        <td>{{.HddSize}}</td>
+        <td>{{.HddCount}}</td>
+        <td>{{.IsEcc}}</td>
+        <td>{{.IsHighio}}</td>
+        <td>{{.RAM}}</td>
+        <td>{{.Price}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+
+<h2>TopRAM</h2>
+<table class="table table-bordered table-hover table-sm">
+  <thead>
+    <th>Hash</th>
+    <th>hdd</th>
+    <th>ssd</th>
+    <th>ram</th>
+    <th>cpu</th>
+    <th>Avg</th>
+    <th>OnlySSD</th>
+    <th>OnlyHDD</th>
+    <th>CPU</th>
+    <th>bench</th>
+    <th>HddSize</th>
+    <th>x</th>
+    <th>IsEcc</th>
+    <th>IsHighio</th>
+    <th>RAM</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    {{range .TopRAM}}
+    <tr>
+        <td><a href="./{{.Hash}}.html">{{.Hash}}</a></td>
+        <td>{{.HddGbPerEurAdj}}</td>
+        <td>{{.SsdGbPerEurAdj}}</td>
+        <td>{{.RAMGbPerEurAdj}}</td>
+        <td>{{.CPUBenchPerEurAdj}}</td>
+        <td>{{.Average}}</td>
+        <td>{{.OnlySSD}}</td>
+        <td>{{.OnlyHDD}}</td>
+        <td>{{.CPU}}</td>
+        <td>{{.CPUBenchmark}}</td>
+        <td>{{.HddSize}}</td>
+        <td>{{.HddCount}}</td>
+        <td>{{.IsEcc}}</td>
+        <td>{{.IsHighio}}</td>
+        <td>{{.RAM}}</td>
+        <td>{{.Price}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+
+<h2>TopHDD</h2>
+<table class="table table-bordered table-hover table-sm">
+  <thead>
+    <th>Hash</th>
+    <th>hdd</th>
+    <th>ssd</th>
+    <th>ram</th>
+    <th>cpu</th>
+    <th>Avg</th>
+    <th>OnlySSD</th>
+    <th>OnlyHDD</th>
+    <th>CPU</th>
+    <th>bench</th>
+    <th>HddSize</th>
+    <th>x</th>
+    <th>IsEcc</th>
+    <th>IsHighio</th>
+    <th>RAM</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    {{range .TopHDD}}
+    <tr>
+        <td><a href="./{{.Hash}}.html">{{.Hash}}</a></td>
+        <td>{{.HddGbPerEurAdj}}</td>
+        <td>{{.SsdGbPerEurAdj}}</td>
+        <td>{{.RAMGbPerEurAdj}}</td>
+        <td>{{.CPUBenchPerEurAdj}}</td>
+        <td>{{.Average}}</td>
+        <td>{{.OnlySSD}}</td>
+        <td>{{.OnlyHDD}}</td>
+        <td>{{.CPU}}</td>
+        <td>{{.CPUBenchmark}}</td>
+        <td>{{.HddSize}}</td>
+        <td>{{.HddCount}}</td>
+        <td>{{.IsEcc}}</td>
+        <td>{{.IsHighio}}</td>
+        <td>{{.RAM}}</td>
+        <td>{{.Price}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+
+<h2>TopSSD</h2>
+<table class="table table-bordered table-hover table-sm">
+  <thead>
+    <th>Hash</th>
+    <th>hdd</th>
+    <th>ssd</th>
+    <th>ram</th>
+    <th>cpu</th>
+    <th>Avg</th>
+    <th>OnlySSD</th>
+    <th>OnlyHDD</th>
+    <th>CPU</th>
+    <th>bench</th>
+    <th>HddSize</th>
+    <th>x</th>
+    <th>IsEcc</th>
+    <th>IsHighio</th>
+    <th>RAM</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    {{range .TopSSD}}
+    <tr>
+        <td><a href="./{{.Hash}}.html">{{.Hash}}</a></td>
+        <td>{{.HddGbPerEurAdj}}</td>
+        <td>{{.SsdGbPerEurAdj}}</td>
+        <td>{{.RAMGbPerEurAdj}}</td>
+        <td>{{.CPUBenchPerEurAdj}}</td>
+        <td>{{.Average}}</td>
+        <td>{{.OnlySSD}}</td>
+        <td>{{.OnlyHDD}}</td>
+        <td>{{.CPU}}</td>
+        <td>{{.CPUBenchmark}}</td>
+        <td>{{.HddSize}}</td>
+        <td>{{.HddCount}}</td>
+        <td>{{.IsEcc}}</td>
+        <td>{{.IsHighio}}</td>
+        <td>{{.RAM}}</td>
+        <td>{{.Price}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+
+
+<h2>TopAvg</h2>
+<table class="table table-bordered table-hover table-sm">
+  <thead>
+    <th>Hash</th>
+    <th>hdd</th>
+    <th>ssd</th>
+    <th>ram</th>
+    <th>cpu</th>
+    <th>Avg</th>
+    <th>OnlySSD</th>
+    <th>OnlyHDD</th>
+    <th>CPU</th>
+    <th>bench</th>
+    <th>HddSize</th>
+    <th>x</th>
+    <th>IsEcc</th>
+    <th>IsHighio</th>
+    <th>RAM</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    {{range .TopAvg}}
+    <tr>
+        <td><a href="./{{.Hash}}.html">{{.Hash}}</a></td>
+        <td>{{.HddGbPerEurAdj}}</td>
+        <td>{{.SsdGbPerEurAdj}}</td>
+        <td>{{.RAMGbPerEurAdj}}</td>
+        <td>{{.CPUBenchPerEurAdj}}</td>
+        <td>{{.Average}}</td>
+        <td>{{.OnlySSD}}</td>
+        <td>{{.OnlyHDD}}</td>
+        <td>{{.CPU}}</td>
+        <td>{{.CPUBenchmark}}</td>
+        <td>{{.HddSize}}</td>
+        <td>{{.HddCount}}</td>
+        <td>{{.IsEcc}}</td>
+        <td>{{.IsHighio}}</td>
+        <td>{{.RAM}}</td>
+        <td>{{.Price}}</td>
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+<p>
+    <a href="./index.html">серверы за все время</a>
+</p>
+<p>
+    <a href="./now.html">серверы сейчас</a>
+</p>
+<h1>{{.Name}} {{.Hash}}</h1>
+<ul>
+    {{range .Description}}
+        <li>{{.}}</li>
+    {{end}}
+</ul>
+<table class="table table-bordered table-hover table-sm">
+    <tbody>
+    <col width="15%">
+    <col width="85%">
+    <tr>
+        <td>OnlySSD</td>
+        <td>{{.OnlySSD}}</td>
+    </tr>
+    <tr>
+        <td>OnlyHDD</td>
+        <td>{{.OnlyHDD}}</td>
+    </tr>
+    <tr>
+        <td>HddGbPerEur</td>
+        <td>{{.HddGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>SsdGbPerEur</td>
+        <td>{{.SsdGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>RAMGbPerEur</td>
+        <td>{{.RAMGbPerEur}}</td>
+    </tr>
+    <tr>
+        <td>CPUBenchPerEur</td>
+        <td>{{.CPUBenchPerEur}}</td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<table class="table table-bordered table-hover table-sm">
+    <tbody>
+    <col width="15%">
+    <col width="85%">
+    <tr>
+        <td>HddGbPerEurAdj</td>
+        <td>{{.HddGbPerEurAdj}}</td>
+    </tr>
+    <tr>
+        <td>SsdGbPerEurAdj</td>
+        <td>{{.SsdGbPerEurAdj}}</td>
+    </tr>
+    <tr>
+        <td>RAMGbPerEurAdj</td>
+        <td>{{.RAMGbPerEurAdj}}</td>
+    </tr>
+    <tr>
+        <td>CPUBenchPerEurAdj</td>
+        <td>{{.CPUBenchPerEurAdj}}</td>
+    </tr>
+    <tr>
+        <td>Average</td>
+        <td>{{.Average}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+<table class="table table-bordered table-hover table-sm">
+    <tbody>
+    <col width="15%">
+    <col width="85%">
+    <tr>
+        <td>Price</td>
+        <td>{{.Price}}</td>
+    </tr>
+    <tr>
+        <td>RAMHr</td>
+        <td>{{.RAMHr}}</td>
+    </tr>
+    <tr>
+        <td>Traffic</td>
+        <td>{{.Traffic}}</td>
+    </tr>
+    <tr>
+        <td>CPU</td>
+        <td>{{.CPU}}</td>
+    </tr>
+    <tr>
+        <td>CPUBenchmark</td>
+        <td>{{.CPUBenchmark}}</td>
+    </tr>
+    <tr>
+        <td>HddCount</td>
+        <td>{{.HddCount}}</td>
+    </tr>
+    <tr>
+        <td>HddHr</td>
+        <td>{{.HddHr}}</td>
+    </tr>
+    <tr>
+        <td>IsEcc</td>
+        <td>{{.IsEcc}}</td>
+    </tr>
+    <tr>
+        <td>IsHighio</td>
+        <td>{{.IsHighio}}</td>
+    </tr>
+    <tr>
+        <td>Bandwith</td>
+        <td>{{.Bandwith}}</td>
+    </tr>
+    <tr>
+        <td>CPUCount</td>
+        <td>{{.CPUCount}}</td>
+    </tr>
+    <tr>
+        <td>NextReduceHr</td>
+        <td>{{.NextReduceHr}}</td>
+    </tr>
+    <tr>
+        <td>Datacenter</td>
+        <td>
+            {{range .Datacenter}}
+                {{.}}
+            {{end}}
+        </td>
+    </tr>
+    <tr>
+        <td>Dist</td>
+        <td>
+            {{range .Dist}}
+                {{.}}
+            {{end}}
+        </td>
+    </tr>
+    <tr>
+        <td>SpecialHdd</td>
+        <td>{{.SpecialHdd}}</td>
+    </tr>
+    <tr>
+        <td>Specials</td>
+        <td>
+            {{range .Specials}}
+                {{.}}
+            {{end}}
+        </td>
+    </tr>
+    <tr>
+        <td>FixedPrice</td>
+        <td>{{.FixedPrice}}</td>
+    </tr>
+    <tr>
+        <td>Freetext</td>
+        <td>{{.Freetext}}</td>
+    </tr>
+    <tr>
+        <td>Key</td>
+        <td>{{.Key}}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

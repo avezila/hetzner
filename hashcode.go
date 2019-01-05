@@ -13,5 +13,5 @@ func HashCode(data interface{}) (string, error) {
 	if err := gobEncoder.Encode(data); err != nil {
 		return "", err
 	}
-	return base64.URLEncoding.EncodeToString(hash.Sum(nil)), nil
+	return base64.URLEncoding.EncodeToString(hash.Sum(nil))[:8], nil
 }
